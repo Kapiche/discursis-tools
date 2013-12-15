@@ -1,0 +1,23 @@
+body {
+    padding: 30px;
+    background: url(../img/pattern.png) fixed bottom left no-repeat, url('../img/background.png') top left repeat;
+}
+
+.div-button {
+    cursor: pointer;
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.div-button:hover {
+    background-color: #e2e2e2;
+}
+
+.field-select {
+    padding-top: 10px;
+}
+
+.output-container {
+    display: none;
+}

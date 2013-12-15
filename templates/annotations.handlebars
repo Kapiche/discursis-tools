@@ -1,0 +1,15 @@
+<div class="col-lg-6">
+    <h2>Step 1 - Select Tiers to include:</h2>
+    <p><em>Only tiers with at least 1 annotation are shown.</em></p>
+    <ul class="list-group">
+        {{#each annotations}}
+        <li class="list-group-item"><label><input type="checkbox" value="{{name}}"> {{name}}</label></li>
+        {{/each}}
+    </ul>
+</div>
+<div class="col-lg-6">
+    <h2>Step 2 - Download the Discursis CSV file</h2>
+    <button type="button" id="elan-save-btn" class="btn btn-primary btn-lg" disabled><span class="glyphicon glyphicon-download-alt"></span> Download CSV</button>
+    <p><strong>Please Note:</strong> In <strong><a href="http://www.google.com/chrome/‎" target="_blank">Chrome</a></strong> the file will download automatically, in <strong><a href="http://www.mozilla.org/en-US/firefox/" target="_blank">Firefox</a></strong> the download dialogue will pop up and in <strong><a href="http://www.apple.com/au/safari/‎" target="_blank">Safari</a></strong> the content of the CSV will open in a new tab and you will need to save the page manually. God knows what will happen in <strong>IE</strong>, you shouldn't use IE...</p>
+</div>
+

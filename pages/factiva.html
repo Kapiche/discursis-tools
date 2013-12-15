@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="text-center">Factiva</h2>
+        <p style="padding-top: 10px">Tools for converting from the Factiva Articles download (.html) to the Discursis CSV type.
+        For instructions on how to download the correct format from the search results page on Factiva, please <a href="{{ ROOT_URL }}/factiva_instructions.html">click here</a>.
+        <strong>It is now safe to turn your internet connection off if you wish.</strong> Use the upload dialogue
+        below to select your *.eaf file to start. Again, please keep in mind this file isn't being uploaded to a server,
+        you're just simply selecting it so this script can operate on it.</p>
+        <p><strong>Please Note:</strong> This tool will use the following columns in prescience order to generate the
+        text column for the Discursis CSV (Text [td], Leading Paragraphs [ls], Headline [hd]). You must select at least
+        one of these fields to generate the CSV.</p>
+        <p style="border: 1px solid #ccc; padding: 10px;"><input type="file" id="factiva-file-select" name="file" /></p>
+    </div>
+</div>
+<div class="row output-container">
+    <div class="col-lg-12">
+        <h2 class="text-center">Please select which Fields to include</h2>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="by">
+            </span>
+            <input type="text" class="form-control" readonly value="Author [by]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="art">
+            </span>
+            <input type="text" class="form-control" readonly value="Art [art]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="clm">
+            </span>
+            <input type="text" class="form-control" readonly value="Column [clm]">
+        </div>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="cx">
+            </span>
+            <input type="text" class="form-control" readonly value="Corrections [cx]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="ed">
+            </span>
+            <input type="text" class="form-control" readonly value="Edition [ed]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="hd">
+            </span>
+            <input type="text" class="form-control" readonly value="Headline [hd]">
+        </div>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="hl">
+            </span>
+            <input type="text" class="form-control" readonly value="Headline Group [hl]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="hlp">
+            </span>
+            <input type="text" class="form-control" readonly value="Headline/Lead Paragraph Group [hlp]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="in">
+            </span>
+            <input type="text" class="form-control" readonly value="Industry Code [in]">
+        </div>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="la">
+            </span>
+            <input type="text" class="form-control" readonly value="Language Code [la]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="ls">
+            </span>
+            <input type="text" class="form-control" readonly value="Lead Paragraphs [ls]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="pg">
+            </span>
+            <input type="text" class="form-control" readonly value="Page [pg]">
+        </div>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="rf">
+            </span>
+            <input type="text" class="form-control" readonly value="Notes/Reference [rf]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="re">
+            </span>
+            <input type="text" class="form-control" readonly value="Region Code [re]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="se">
+            </span>
+            <input type="text" class="form-control" readonly value="Section [se]">
+        </div>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="sc">
+            </span>
+            <input type="text" class="form-control" readonly value="Source Code [sc]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="sn">
+            </span>
+            <input type="text" class="form-control" readonly value="Source Name [sn]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="ns">
+            </span>
+            <input type="text" class="form-control" readonly value="News Subject Code [ns]">
+        </div>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="td">
+            </span>
+            <input type="text" class="form-control" readonly value="Text [td]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="vol">
+            </span>
+            <input type="text" class="form-control" readonly value="Volume [vol]">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" name="wc">
+            </span>
+            <input type="text" class="form-control" readonly value="Word Count [wc]">
+        </div>
+    </div>
+</div>
+<div class="row field-select output-container">
+    <div class="col-lg-2">
+         <p><button type="button" id="factiva-save-btn" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Download CSV</button></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ STATIC_URL }}/js/factiva.js"></script>
+{% endblock %}

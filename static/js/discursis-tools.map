@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "discursis-tools.js",
+  "sourceRoot": "",
+  "sources": [
+    "discursis-tools.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CAAkB,EAAlB,GAAA,CAAkB;CAEd,EAAsB,CAAtB,KAAsB,EAAtB,EAAA;CACI,EAAc,CAAd,CAAA,IAAc,IAAd;CACW,EAAW,CAAA,EAAZ,EAAN,OAAA;CADJ,MAAc;CADlB,IAAsB;CAF1B,EAAkB;CAAlB"
+}

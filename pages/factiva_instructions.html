@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="text-center">Factiva Export Instructions</h2>
+        <p style="padding-top: 10px">Discursis Tools requires a very specific Factiva export format. Below are instruction on how to
+        export articles from Factivas search results page to the correct format.</p>
+        <h3>Step 1 - Do your search</h3>
+        <p>Execute your Factiva search using your regular method. You should presented with a search results screen very similar to the following screenshot:</p>
+        <p><img src="{{ STATIC_URL }}/img/factiva/step1.png" class="img-thumbnail img-responsive"></p>
+        <h3>Step 2 - Select Articles</h3>
+        <p>Next you need to select that articles you wish to export (or all articles):</p>
+        <p><img src="{{ STATIC_URL }}/img/factiva/step2.png" class="img-thumbnail img-responsive"></p>
+        <h3>Step 3 - Export Articles</h3>
+        <p>You need to save the articles you have selected. Click the save button (<img src="{{ STATIC_URL }}/img/factiva/save-icon.png">) and select <em>Article Format</em>:</p>
+        <p><img src="{{ STATIC_URL }}/img/factiva/step3.png" class="img-thumbnail img-responsive"></p>
+        <h3>Step 4 - Save the Export</h3>
+        <p>The result of the previous step will be a new window with the export HTML in it. You need to save this page. In Chrome, you can right-click in the page and select <em>Save As</em>:</p>
+        <p><img src="{{ STATIC_URL }}/img/factiva/step4.png" class="img-thumbnail img-responsive"></p>
+        <h3>Step 5 - Generate Discursis CSV</h3>
+        <p>You can now use our <a href="{{ ROOT_URL }}/factiva.html">Factiva tool</a> to convert the articles to a format that can be used in Discursis by upload the file you just saved!</p>
+    </div>
+</div>
+<div class="row" id="elan-output">
+</div>
+{% endblock %}
